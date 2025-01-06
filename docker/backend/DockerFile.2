@@ -1,0 +1,33 @@
+# ソースのビルド用コンテナ
+FROM mcr.microsoft.com/openjdk/jdk:17-ubuntu AS builder
+
+# sdkman!からgradleを入手→パスを通す
+RUN apt-get update
+RUN apt-get -y install curl
+RUN apt-get -y install zip
+RUN curl -s "https://get.sdkman.io" | bash
+RUN echo ". $HOME/.sdkman/bin/sdkman-init.sh; sdk install gradle" | bash
+
+# ソースを全て/app配下に持っていく
+WORKDIR /app
+
+COPY ./* ./
+COPY ./gradle/ ./gradle/
+COPY ./src/ ./src/
+
+
+# gradle build
+RUN $HOME/.sdkman/candidates/gradle/current/bin/gradle build
+
+# 実際に動かすコンテナの記述
+FROM mcr.microsoft.com/openjdk/jdk:17-ubuntu
+
+# gradle buildで生成される実行可能jarファイルのパス ファイル名をbuild-argで受け取る
+ARG JAR_FILE_PATH="/app/build/libs/demo-0.0.1-SNAPSHOT.jar"
+
+WORKDIR /app
+
+# builderコンテナから実行可能jarファイルをコピー jarファイル名はbuild-argから受け取る
+COPY --from=builder ${JAR_FILE_PATH} ./app.jar
+
+ENTRYPOINT ["java", "-jar", "app.jar"]

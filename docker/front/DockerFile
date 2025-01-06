@@ -1,0 +1,17 @@
+FROM node:18.15.0
+
+ENV LANG=UTF-8
+ENV TZ=Asia/Tokyo
+
+WORKDIR /app/
+
+COPY ./front/src/todo-vite-app/ /app/
+# RUN cd todo-vite-app
+
+# 必要なモジュールを全てインストール
+RUN npm install
+
+EXPOSE 3000
+
+# コンテナ起動時にフロントのソースを実行
+CMD ["npm", "run", "dev"]
