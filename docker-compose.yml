@@ -22,7 +22,8 @@ services:
   #       - ${JAR_FILE_PATH}: /app/build/libs/demo-0.0.1-SNAPSHOT.jar
     container_name: backend
     #restart: always
-    expose:
+    # ports はホストからアクセス可、expose はホストからアクセス不可なポート。
+    ports:
       - "8080:8080" # 8080番ポートを内部ネットワークに公開
     volumes:
       - ./backend/sample-api/:/app/

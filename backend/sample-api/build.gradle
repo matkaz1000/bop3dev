@@ -5,7 +5,10 @@ plugins {
 	id 'application'
 }
 
-// mainClassName = 'sample_api.SampleApiApplication'
+application{
+	mainClass = 'com.practise.sample_api.SampleApiApplication'
+}
+
 
 group = 'com.practise'
 version = '0.0.1-SNAPSHOT'
