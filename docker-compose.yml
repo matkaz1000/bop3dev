@@ -9,19 +9,14 @@ services:
       - 3000:3000
     volumes:
       - ./front/src/:/app/
-    # depends_on:
-    #   - spring # springコンテナよりも後に起動させる
     tty: true # コンテナを起動し続ける
     working_dir: /app/todo-vite-app
-    # command: bash -c "npm run build"
   backend:
     build:
       context: .
       dockerfile: ./docker/backend/DockerFile
-  #     args:
-  #       - ${JAR_FILE_PATH}: /app/build/libs/demo-0.0.1-SNAPSHOT.jar
     container_name: backend
-    #restart: always
+    restart: always
     # ports はホストからアクセス可、expose はホストからアクセス不可なポート。
     ports:
       - "8080:8080" # 8080番ポートを内部ネットワークに公開
