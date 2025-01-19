@@ -28,5 +28,20 @@ services:
     volumes:
       - ./backend/sample-api/:/app/
     tty: true
-#    command: bash -c "$HOME/.sdkman/candidates/gradle/current/bin/gradle build"
+  db:
+    container_name: mysql
+    tty: true
+    image: mysql:8.0
+    volumes:
+      - ./database/mysql/data:/var/lib/mysql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dev_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: P@ssw0rd
+      TZ: 'Asia/Tokyo'
+      command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
 
