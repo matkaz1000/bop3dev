@@ -1,0 +1,38 @@
+<mxfile host="65bd71144e">
+    <diagram id="dlmeBmWjU4RJbxCdEfdu" name="Page-1">
+        <mxGraphModel dx="1110" dy="699" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="10" value="" style="whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="150" width="680" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="API呼び出し" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="5">
+                    <mxGeometry x="0.2696" y="3" relative="1" as="geometry">
+                        <mxPoint x="-26" y="-7" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2" value="front&lt;br style=&quot;font-size: 15px;&quot;&gt;&amp;lt;&amp;lt;React&amp;gt;&amp;gt;" style="whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="190" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=15;" edge="1" parent="1" source="3" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="CRUD" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" vertex="1" connectable="0" parent="8">
+                    <mxGeometry x="0.24" y="2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="3" value="backend API&lt;br style=&quot;font-size: 15px;&quot;&gt;&amp;lt;&amp;lt;Spring&amp;gt;&amp;gt;" style="whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="190" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Database" style="whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="350" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
