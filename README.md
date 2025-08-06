@@ -89,3 +89,6 @@ docker exec -it backend /bin/bash
 # その他
 他の参考資料などは docs フォルダにまとめています。気になったらのぞいてみてください。
 
+# メモ
+
+- viteが動かない
